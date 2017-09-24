@@ -17,17 +17,18 @@
 
     <div class="weui-panel weui-panel_access">
       <!-- <div class="weui-panel__hd">商品列表</div> -->
-      <div class="weui-panel__bd">      
-        <ul *ngFor="let p of products">
-          <li>
+      <div class="weui-panel__bd">
+        <ul>
+          <li *ngFor="let p of products" onselect="onSelect(p)">
             <div>
-              <a href={{p.targetUrl}}><img class="proImg" src={{p.imgSrc}} alt="商品图片"></a>
+              <a href="#"><img class="proImg" src={{p.masterImg}} alt="商品图片"></a>
             </div>
             <div class="proDescPanel">
-              <a class="productTitle" href={{p.targetUrl}}>{{p.title}}</a>
-            </div>            
+              <a class="productName" href="#">{{p.name}}</a>
+            </div>
           </li>
         </ul>
+        <div *ngIf="selectedProduct">{{selectedProduct.name}}</div>
       </div>
     </div>
   </weui-tab>
@@ -36,16 +37,21 @@
   <weui-tab heading="活动" [icon]="'<img src=./assets/images/icon/activity.png>'">
     <div class="weui-panel weui-panel_access">
       <div class="weui-panel__hd">最新活动</div>
-      <div class="weui-panel__bd" *ngFor="let i of activityImgs">
-        <!-- <a href={{p.targetUrl}} class="weui-media-box weui-media-box_appmsg">
-          <div class="weui-media-box__hd">
-            <img class="weui-media-box__thumb" src={{p.imgSrc}}>
-          </div>
-          <div class="weui-media-box__bd">
-            <p>{{p.title}}</p>
-          </div>
-        </a> -->
-        <img class="swiperImg" src="{{i.url}}">
+      <div class="weui-panel__bd">
+        <div class="activity-slide" *ngFor="let i of activityImgs">
+          <img class="swiperImg" src="{{i.url}}">
+        </div>
+
+        <!-- <div *ngFor="let sp of suitProducts">
+          <a href="#" class="weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd">
+              <img class="weui-media-box__thumb" src={{sp.masterImg}}>
+            </div>
+            <div class="weui-media-box__bd">
+              <p>{{sp.name}}</p>
+            </div>
+          </a>
+        </div> -->
       </div>
     </div>
   </weui-tab>
@@ -54,7 +60,7 @@
   <weui-tab heading="购物车" [icon]="'<img src=./assets/images/icon/cart.png>'">
     <div class="weui-panel weui-panel_access">
       <div class="weui-panel__hd">我的购物车</div>
-      <div class="weui-panel__bd" *ngFor="let p of products">
+      <div class="weui-panel__bd" *ngFor="let p of activityProducts">
         <div class="weui-cell weui-cell_swiped" weui-swipe>
           <div class="weui-cell__bd">
             <div class="weui-cell">
@@ -65,7 +71,7 @@
                 <br>
               </div>
               <div class="weui-cell__bd">
-                <p style="font-size:50%">{{p.title}}</p>
+                <p style="font-size:50%">{{p.name}}</p>
               </div>
               <div class="weui-cell__ft">
                 <weui-stepper [min]="1" [max]="10"></weui-stepper>
