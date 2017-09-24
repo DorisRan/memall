@@ -29,4 +29,3 @@ export const ACTIVITY_PRODUCTS: Product[] = [
     new Product('金风玉露.中秋礼', '', 100, 'assets/images/activities/act-3.jpg', []),
     new Product('玉兔追月.美满礼', '', 100, 'assets/images/activities/act-4.jpg', []),
     new Product('喜悦礼盒', '', 100, 'assets/images/activities/act-5.jpg', [])];
-

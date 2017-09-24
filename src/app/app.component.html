@@ -1,4 +1,4 @@
-<weui-tabbar>
+<weui-tabbar>    
   <!-- 首页 -->
   <weui-tab heading="首页" [icon]="'<img src=./assets/images/icon/home.png>'">
     <weui-searchbar (search)="onSearch($event)" (cancel)="onCancel()" (clear)="onClear()" (submit)="onSubmit($event)"></weui-searchbar>
@@ -28,7 +28,6 @@
             </div>
           </li>
         </ul>
-        <div *ngIf="selectedProduct">{{selectedProduct.name}}</div>
       </div>
     </div>
   </weui-tab>
@@ -137,5 +136,5 @@
         </a>
       </div>
     </div>
-  </weui-tab>
+  </weui-tab>  
 </weui-tabbar>

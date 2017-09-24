@@ -41,9 +41,9 @@ export class AppComponent {
     this.selectedProduct = this.products[1];
 
     this.swiperImgs = [
-      // { url: 'assets/images/swiper/swiper-1.jpg', title: '标题1' },
-      // { url: 'assets/images/swiper/swiper-2.jpg', title: '标题2' },
-      { url: this.activityProducts[0].masterImg, title: this.activityProducts[0].name }
+      // { url: this.activityProducts[0].masterImg, title: this.activityProducts[0].name },
+      // { url: this.activityProducts[1].masterImg, title: this.activityProducts[1].name },
+      { url: this.activityProducts[2].masterImg, title: this.activityProducts[2].name }
     ];
 
     this.activityImgs = [

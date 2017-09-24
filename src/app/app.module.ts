@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { WeUiModule } from 'ngx-weui';
 
 import { AppComponent } from './app.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductDetailComponent
+    ProductComponent,
   ],
   imports: [
     BrowserModule,
