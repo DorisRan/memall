@@ -1,15 +1,15 @@
 <div class="weui-panel weui-panel_access">
   <div class="weui-panel__hd">{{product.name}}</div>
   <div class="weui-panel__bd">
-    <img src={{product.masterImg}}>
-    <div >{{product.description}}</div>
-    <div>￥ {{product.price}}</div>
-    <weui-button>加入购物车</weui-button>
+    <img class="detailImg" src={{product.masterImg}}>
+    <div class="description" >{{product.description}}</div>
+    <div>￥ {{product.wsPrice}}</div>
+    <!-- <weui-button>加入购物车</weui-button> -->
     
     <weui-navbar>
       <weui-tab heading="详情">
-      <div *ngFor="let img of detailImgs">
-        <img src="{{img}}">
+      <div *ngFor="let img of product.detailImgs">
+        <img class="detailImg" src="{{img}}">
       </div>
       </weui-tab>
       <weui-tab heading="评论"></weui-tab>
